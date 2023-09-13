@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF5E093C2AB2165200A214DD /* RecipalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E093B2AB2165200A214DD /* RecipalApp.swift */; };
+		CF5E093E2AB2165200A214DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E093D2AB2165200A214DD /* ContentView.swift */; };
+		CF5E09402AB2165500A214DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF5E093F2AB2165500A214DD /* Assets.xcassets */; };
+		CF5E09432AB2165500A214DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF5E09422AB2165500A214DD /* Preview Assets.xcassets */; };
+		CF5E09452AB2165500A214DD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E09442AB2165500A214DD /* Persistence.swift */; };
+		CF5E09482AB2165500A214DD /* Recipal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF5E09462AB2165500A214DD /* Recipal.xcdatamodeld */; };
+		CF5E09522AB2165500A214DD /* RecipalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E09512AB2165500A214DD /* RecipalTests.swift */; };
+		CF5E095C2AB2165500A214DD /* RecipalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E095B2AB2165500A214DD /* RecipalUITests.swift */; };
+		CF5E095E2AB2165500A214DD /* RecipalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E095D2AB2165500A214DD /* RecipalUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF5E094E2AB2165500A214DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF5E09302AB2165200A214DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF5E09372AB2165200A214DD;
+			remoteInfo = Recipal;
+		};
+		CF5E09582AB2165500A214DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF5E09302AB2165200A214DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF5E09372AB2165200A214DD;
+			remoteInfo = Recipal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF5E09382AB2165200A214DD /* Recipal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5E093B2AB2165200A214DD /* RecipalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipalApp.swift; sourceTree = "<group>"; };
+		CF5E093D2AB2165200A214DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF5E093F2AB2165500A214DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF5E09422AB2165500A214DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF5E09442AB2165500A214DD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CF5E09472AB2165500A214DD /* Recipal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipal.xcdatamodel; sourceTree = "<group>"; };
+		CF5E094D2AB2165500A214DD /* RecipalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5E09512AB2165500A214DD /* RecipalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipalTests.swift; sourceTree = "<group>"; };
+		CF5E09572AB2165500A214DD /* RecipalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5E095B2AB2165500A214DD /* RecipalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipalUITests.swift; sourceTree = "<group>"; };
+		CF5E095D2AB2165500A214DD /* RecipalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF5E09352AB2165200A214DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E094A2AB2165500A214DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E09542AB2165500A214DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF5E092F2AB2165200A214DD = {
+			isa = PBXGroup;
+			children = (
+				CF5E093A2AB2165200A214DD /* Recipal */,
+				CF5E09502AB2165500A214DD /* RecipalTests */,
+				CF5E095A2AB2165500A214DD /* RecipalUITests */,
+				CF5E09392AB2165200A214DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF5E09392AB2165200A214DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF5E09382AB2165200A214DD /* Recipal.app */,
+				CF5E094D2AB2165500A214DD /* RecipalTests.xctest */,
+				CF5E09572AB2165500A214DD /* RecipalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF5E093A2AB2165200A214DD /* Recipal */ = {
+			isa = PBXGroup;
+			children = (
+				CF5E093B2AB2165200A214DD /* RecipalApp.swift */,
+				CF5E093D2AB2165200A214DD /* ContentView.swift */,
+				CF5E093F2AB2165500A214DD /* Assets.xcassets */,
+				CF5E09442AB2165500A214DD /* Persistence.swift */,
+				CF5E09462AB2165500A214DD /* Recipal.xcdatamodeld */,
+				CF5E09412AB2165500A214DD /* Preview Content */,
+			);
+			path = Recipal;
+			sourceTree = "<group>";
+		};
+		CF5E09412AB2165500A214DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CF5E09422AB2165500A214DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF5E09502AB2165500A214DD /* RecipalTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF5E09512AB2165500A214DD /* RecipalTests.swift */,
+			);
+			path = RecipalTests;
+			sourceTree = "<group>";
+		};
+		CF5E095A2AB2165500A214DD /* RecipalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF5E095B2AB2165500A214DD /* RecipalUITests.swift */,
+				CF5E095D2AB2165500A214DD /* RecipalUITestsLaunchTests.swift */,
+			);
+			path = RecipalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF5E09372AB2165200A214DD /* Recipal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF5E09612AB2165500A214DD /* Build configuration list for PBXNativeTarget "Recipal" */;
+			buildPhases = (
+				CF5E09342AB2165200A214DD /* Sources */,
+				CF5E09352AB2165200A214DD /* Frameworks */,
+				CF5E09362AB2165200A214DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Recipal;
+			productName = Recipal;
+			productReference = CF5E09382AB2165200A214DD /* Recipal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF5E094C2AB2165500A214DD /* RecipalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF5E09642AB2165500A214DD /* Build configuration list for PBXNativeTarget "RecipalTests" */;
+			buildPhases = (
+				CF5E09492AB2165500A214DD /* Sources */,
+				CF5E094A2AB2165500A214DD /* Frameworks */,
+				CF5E094B2AB2165500A214DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF5E094F2AB2165500A214DD /* PBXTargetDependency */,
+			);
+			name = RecipalTests;
+			productName = RecipalTests;
+			productReference = CF5E094D2AB2165500A214DD /* RecipalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF5E09562AB2165500A214DD /* RecipalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF5E09672AB2165500A214DD /* Build configuration list for PBXNativeTarget "RecipalUITests" */;
+			buildPhases = (
+				CF5E09532AB2165500A214DD /* Sources */,
+				CF5E09542AB2165500A214DD /* Frameworks */,
+				CF5E09552AB2165500A214DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF5E09592AB2165500A214DD /* PBXTargetDependency */,
+			);
+			name = RecipalUITests;
+			productName = RecipalUITests;
+			productReference = CF5E09572AB2165500A214DD /* RecipalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF5E09302AB2165200A214DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CF5E09372AB2165200A214DD = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CF5E094C2AB2165500A214DD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CF5E09372AB2165200A214DD;
+					};
+					CF5E09562AB2165500A214DD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CF5E09372AB2165200A214DD;
+					};
+				};
+			};
+			buildConfigurationList = CF5E09332AB2165200A214DD /* Build configuration list for PBXProject "Recipal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF5E092F2AB2165200A214DD;
+			productRefGroup = CF5E09392AB2165200A214DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF5E09372AB2165200A214DD /* Recipal */,
+				CF5E094C2AB2165500A214DD /* RecipalTests */,
+				CF5E09562AB2165500A214DD /* RecipalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF5E09362AB2165200A214DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5E09432AB2165500A214DD /* Preview Assets.xcassets in Resources */,
+				CF5E09402AB2165500A214DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E094B2AB2165500A214DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E09552AB2165500A214DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF5E09342AB2165200A214DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5E09482AB2165500A214DD /* Recipal.xcdatamodeld in Sources */,
+				CF5E09452AB2165500A214DD /* Persistence.swift in Sources */,
+				CF5E093E2AB2165200A214DD /* ContentView.swift in Sources */,
+				CF5E093C2AB2165200A214DD /* RecipalApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E09492AB2165500A214DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5E09522AB2165500A214DD /* RecipalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5E09532AB2165500A214DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF5E095C2AB2165500A214DD /* RecipalUITests.swift in Sources */,
+				CF5E095E2AB2165500A214DD /* RecipalUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF5E094F2AB2165500A214DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF5E09372AB2165200A214DD /* Recipal */;
+			targetProxy = CF5E094E2AB2165500A214DD /* PBXContainerItemProxy */;
+		};
+		CF5E09592AB2165500A214DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF5E09372AB2165200A214DD /* Recipal */;
+			targetProxy = CF5E09582AB2165500A214DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CF5E095F2AB2165500A214DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF5E09602AB2165500A214DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF5E09622AB2165500A214DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Recipal/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.Recipal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF5E09632AB2165500A214DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Recipal/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.Recipal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF5E09652AB2165500A214DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.RecipalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recipal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recipal";
+			};
+			name = Debug;
+		};
+		CF5E09662AB2165500A214DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.RecipalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recipal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recipal";
+			};
+			name = Release;
+		};
+		CF5E09682AB2165500A214DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.RecipalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Recipal;
+			};
+			name = Debug;
+		};
+		CF5E09692AB2165500A214DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soha.RecipalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Recipal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF5E09332AB2165200A214DD /* Build configuration list for PBXProject "Recipal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5E095F2AB2165500A214DD /* Debug */,
+				CF5E09602AB2165500A214DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF5E09612AB2165500A214DD /* Build configuration list for PBXNativeTarget "Recipal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5E09622AB2165500A214DD /* Debug */,
+				CF5E09632AB2165500A214DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF5E09642AB2165500A214DD /* Build configuration list for PBXNativeTarget "RecipalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5E09652AB2165500A214DD /* Debug */,
+				CF5E09662AB2165500A214DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF5E09672AB2165500A214DD /* Build configuration list for PBXNativeTarget "RecipalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5E09682AB2165500A214DD /* Debug */,
+				CF5E09692AB2165500A214DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF5E09462AB2165500A214DD /* Recipal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF5E09472AB2165500A214DD /* Recipal.xcdatamodel */,
+			);
+			currentVersion = CF5E09472AB2165500A214DD /* Recipal.xcdatamodel */;
+			path = Recipal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CF5E09302AB2165200A214DD /* Project object */;
+}
