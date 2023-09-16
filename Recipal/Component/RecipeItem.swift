@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct RecipeItem: View {
+    var recipe : Result?
+    @State var imageURl : URL?
     var body: some View {
         ZStack{
-            Image("recipe")
-                .resizable()
+            
+            //Loading recipe image
+            AsyncImage(url:  imageURl){ phase in
+                switch phase{
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                case .failure:
+                    Image("recipe")
+                        .resizable()
+                @unknown default:
+                    fatalError("unexpected image")
+                }
+            }
+            
             RectangleGradientGroup()
             
+            //Recipe information
             HStack(alignment: .top){
                 Button {
                     
@@ -21,7 +39,6 @@ struct RecipeItem: View {
                     VStack{
                         Image(systemName: "heart")
                             .font(.title3)
-                            
                     }//VStack for fav button
                     .frame(width: 40, height: 40)
                     .background(Color("MainColor"))
@@ -29,31 +46,36 @@ struct RecipeItem: View {
                     .fontWeight(.heavy)
                     .cornerRadius(10)
                 }
+                
                 Spacer()
                 
-                VStack(alignment: .leading, spacing: 10){
-                    Text("Veg Noodies Recipe")
+                VStack(alignment: .leading, spacing: 8){
+                    Text(recipe?.name ?? "no data")
                         .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                         .fontWeight(.heavy)
                         .font(.system(size: 18))
-                    Text("by Qadeer Khan")
+                    Text(recipe?.slug ?? "no data")
                         .fontWeight(.light)
                         .font(.system(size: 14))
+                        .lineLimit(1)
                     
-                    HStack{
+                    HStack(alignment: .top){
                         Image("knife_fork")
                             .resizable()
                             .frame(width: 20, height: 20)
-                        Text("Paki Food")
+                        Text(recipe?.description ?? "no data")
                             .fontWeight(.light)
                             .font(.system(size: 14))
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
                     }//HStack for cook
                     
                     HStack{
                         Image("fork-and-knife-with-plate")
                             .resizable()
                             .frame(width: 20, height: 20)
-                        Text("servings: 4")
+                        Text("servings:" + String(recipe?.numServings ?? 0))
                             .fontWeight(.light)
                             .font(.system(size: 14))
                     }//HStack for serving
@@ -62,7 +84,6 @@ struct RecipeItem: View {
                 .frame(width: 150)
                 .foregroundColor(.white)
                 
-                
             }//HStack
             .padding(.horizontal, 20)
             
@@ -70,11 +91,12 @@ struct RecipeItem: View {
         .frame(height: 180 ,alignment: .center)
         .cornerRadius(10)
         .padding(.horizontal, 10)
-
-        
-
+        .onAppear {
+            imageURl = URL(string: recipe?.thumbnail_url ?? "")
+        }
     }
 }
+
 
 struct RecipeItem_Previews: PreviewProvider {
     static var previews: some View {
