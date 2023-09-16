@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-struct FavouriteView: View {
+struct FavouriteView: View, CellDelegate {
+    func renderView() {
+        fetchedResults = favouriteViewModel.getAllFavouriteRecipes(context: viewContext)
+    }
     
     
+    
+    @State private var showAlert: Bool = false
     @State var fetchedResults : [FavouriteRecipe]?
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
@@ -22,19 +27,20 @@ struct FavouriteView: View {
                         DetailsView()
                     } label: {
                         let result = Result(videoID: nil, name: item.favouriteName, originalVideoURL: nil, numServings: Int(item.favouriteServings ?? "0"), keywords: nil, showID: nil, canonicalID: nil, inspiredByURL: nil, seoTitle: nil, isShoppable: nil, thumbnail_url: item.favouriteImage, videoURL: nil, updatedAt: nil, yields: nil, isOneTop: nil, id: item.favouriteId as? Int, approvedAt: nil, totalTimeMinutes: nil, slug: item.favouriteMealType, createdAt: nil, description: item.favouriteMealCheif, recipes: nil)
-                        RecipeItem(recipe: result)
+                        RecipeItem(delegate: self, recipe: result)
                     }
                 }// end of for
             }//vertical ScrollView
             .navigationTitle("Favourites")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear(){
-                fetchedResults = favouriteViewModel.getAllFavouriteRecipes(context: viewContext)
+                renderView()
             }
             
             
         }//NavigationView
     }
+    
 }
 
 struct FavouriteView_Previews: PreviewProvider {

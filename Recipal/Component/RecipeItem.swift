@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct RecipeItem: View {
+    var delegate: CellDelegate?
     var recipe : Result?
+    @State private var showAlert: Bool = false
     @State var imageURl : URL?
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
@@ -39,11 +41,11 @@ struct RecipeItem: View {
             HStack(alignment: .top){
                 Button {
                     if isFavourite == true {
-                        favouriteViewModel.deleteFavouriteRecipeByName(favouriteName: recipe?.name ?? "", context: viewContext)
+                       showAlert.toggle()
                     }else{
                         favouriteViewModel.createFavouriteRecipe(context: viewContext, favouriteRecipe: recipe!)
+                        isFavourite = true
                     }
-                    isFavourite?.toggle()
                 } label: {
                     VStack{
                         Image(systemName: (isFavourite ?? false) ? "heart.fill" : "heart")
@@ -54,6 +56,15 @@ struct RecipeItem: View {
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
                     .cornerRadius(10)
+                }.alert("Warrning", isPresented: $showAlert) {
+                    Button("Delete", role: .destructive){
+                        favouriteViewModel.deleteFavouriteRecipeByName(favouriteName: recipe?.name ?? "", context: viewContext)
+                        self.delegate?.renderView()
+                        showAlert.toggle()
+                        isFavourite?.toggle()
+                    }
+                } message: {
+                    Text("Do you want to delete this Recipe")
                 }
                 
                 Spacer()
@@ -102,12 +113,14 @@ struct RecipeItem: View {
         .padding(.horizontal, 10)
         .onAppear {
             imageURl = URL(string: recipe?.thumbnail_url ?? "")
-            
             isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteName: recipe?.name ?? "0", context: viewContext)
         }
     }
 }
 
+protocol CellDelegate{
+    func renderView()
+}
 struct RecipeItem_Previews: PreviewProvider {
     static var previews: some View {
         RecipeItem()
