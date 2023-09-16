@@ -10,6 +10,10 @@ import SwiftUI
 struct RecipeItem: View {
     var recipe : Result?
     @State var imageURl : URL?
+    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var favouriteViewModel : FavouriteViewModel
+    
+    @State var isFavourite: Bool?
     var body: some View {
         ZStack{
             
@@ -34,10 +38,15 @@ struct RecipeItem: View {
             //Recipe information
             HStack(alignment: .top){
                 Button {
-                    
+                    if isFavourite == true {
+                        favouriteViewModel.deleteFavouriteRecipeByName(favouriteName: recipe?.name ?? "", context: viewContext)
+                    }else{
+                        favouriteViewModel.createFavouriteRecipe(context: viewContext, favouriteRecipe: recipe!)
+                    }
+                    isFavourite?.toggle()
                 } label: {
                     VStack{
-                        Image(systemName: "heart")
+                        Image(systemName: (isFavourite ?? false) ? "heart.fill" : "heart")
                             .font(.title3)
                     }//VStack for fav button
                     .frame(width: 40, height: 40)
@@ -93,10 +102,11 @@ struct RecipeItem: View {
         .padding(.horizontal, 10)
         .onAppear {
             imageURl = URL(string: recipe?.thumbnail_url ?? "")
+            
+            isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteName: recipe?.name ?? "0", context: viewContext)
         }
     }
 }
-
 
 struct RecipeItem_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct RecipalApp: App {
-
+    let persistenceController = PersistenceController.shared
+    @StateObject private var favouriteViewModel = FavouriteViewModel()
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(favouriteViewModel)
             
         }
     }

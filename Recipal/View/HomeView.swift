@@ -42,6 +42,7 @@ struct HomeView: View {
                     .padding(.horizontal, 10)
                 
                 HStack{
+                    
                     ForEach(categoriesData){ category in
                         
                         VStack{

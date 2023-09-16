@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9387D252AB5CF1F0031C51C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9387D242AB5CF1F0031C51C /* CoreDataManager.swift */; };
+		C9387D2A2AB5D1160031C51C /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */; };
+		C9E1DB7A2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */; };
+		C9E1DB7B2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */; };
 		CF0A8BC2278161B3004B8C92 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC1278161B3004B8C92 /* NetworkService.swift */; };
 		CF0A8BC52781626D004B8C92 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC42781626D004B8C92 /* ResponseModel.swift */; };
 		CF0A8BC8278162D6004B8C92 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC7278162D6004B8C92 /* HomeViewModel.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9387D242AB5CF1F0031C51C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF0A8BC1278161B3004B8C92 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CF0A8BC42781626D004B8C92 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		CF0A8BC7278162D6004B8C92 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9387D232AB5CEF20031C51C /* DatabaseLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C9387D242AB5CF1F0031C51C /* CoreDataManager.swift */,
+			);
+			path = DatabaseLayer;
+			sourceTree = "<group>";
+		};
 		CF0A8BC027816195004B8C92 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0A8BC7278162D6004B8C92 /* HomeViewModel.swift */,
+				C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +152,8 @@
 		CF5E092F2AB2165200A214DD = {
 			isa = PBXGroup;
 			children = (
+				C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */,
+				C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */,
 				CF5E093A2AB2165200A214DD /* Recipal */,
 				CF5E09502AB2165500A214DD /* RecipalTests */,
 				CF5E095A2AB2165500A214DD /* RecipalUITests */,
@@ -223,6 +242,7 @@
 		CF5E09762AB23AD800A214DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9387D232AB5CEF20031C51C /* DatabaseLayer */,
 				CF0A8BC32781623F004B8C92 /* ObjectModels */,
 				CF0A8BC027816195004B8C92 /* NetworkLayer */,
 			);
@@ -383,16 +403,20 @@
 				CF5E09752AB2385900A214DD /* DetailsView.swift in Sources */,
 				CF0A8BC2278161B3004B8C92 /* NetworkService.swift in Sources */,
 				CF5E09792AB23B0200A214DD /* CategoryModel.swift in Sources */,
+				C9E1DB7A2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift in Sources */,
 				CF5E097F2AB2565100A214DD /* WhiteGradient.swift in Sources */,
 				CF5E09452AB2165500A214DD /* Persistence.swift in Sources */,
 				CF5E093E2AB2165200A214DD /* MainView.swift in Sources */,
 				CF0A8BC52781626D004B8C92 /* ResponseModel.swift in Sources */,
+				C9387D252AB5CF1F0031C51C /* CoreDataManager.swift in Sources */,
 				CF5E09832AB2658C00A214DD /* IngrdientItem.swift in Sources */,
 				CF5E096B2AB217DC00A214DD /* HomeView.swift in Sources */,
 				CF0A8BCA2AB585DB004B8C92 /* Loader.swift in Sources */,
 				CF5E096D2AB217ED00A214DD /* FavouriteView.swift in Sources */,
 				CF5E097B2AB23B4800A214DD /* CategoryData.swift in Sources */,
+				C9E1DB7B2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift in Sources */,
 				CF5E09712AB21EDB00A214DD /* RecipeItem.swift in Sources */,
+				C9387D2A2AB5D1160031C51C /* FavouriteViewModel.swift in Sources */,
 				CF5E093C2AB2165200A214DD /* RecipalApp.swift in Sources */,
 				CF5E097D2AB254D000A214DD /* RecipeDetailsItem.swift in Sources */,
 			);
