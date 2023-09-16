@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 struct RecipeItem: View {
     var delegate: CellDelegate?
@@ -14,7 +15,6 @@ struct RecipeItem: View {
     @State var imageURl : URL?
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
-    
     @State var isFavourite: Bool?
     var body: some View {
         ZStack{
@@ -44,6 +44,7 @@ struct RecipeItem: View {
                        showAlert.toggle()
                     }else{
                         favouriteViewModel.createFavouriteRecipe(context: viewContext, favouriteRecipe: recipe!)
+                        delegate?.showToast()
                         isFavourite = true
                     }
                 } label: {
@@ -66,7 +67,6 @@ struct RecipeItem: View {
                 } message: {
                     Text("Do you want to delete this Recipe")
                 }
-                
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 8){
@@ -108,6 +108,7 @@ struct RecipeItem: View {
             .padding(.horizontal, 20)
             
         }// ZStack
+        
         .frame(height: 180 ,alignment: .center)
         .cornerRadius(10)
         .padding(.horizontal, 10)
@@ -120,7 +121,9 @@ struct RecipeItem: View {
 
 protocol CellDelegate{
     func renderView()
+    func showToast()
 }
+
 struct RecipeItem_Previews: PreviewProvider {
     static var previews: some View {
         RecipeItem()

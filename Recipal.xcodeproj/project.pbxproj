@@ -11,6 +11,7 @@
 		C9387D2A2AB5D1160031C51C /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */; };
 		C9E1DB7A2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */; };
 		C9E1DB7B2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */; };
+		C9E1DB7E2AB6227A003A6D36 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = C9E1DB7D2AB6227A003A6D36 /* SimpleToast */; };
 		CF0A8BC2278161B3004B8C92 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC1278161B3004B8C92 /* NetworkService.swift */; };
 		CF0A8BC52781626D004B8C92 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC42781626D004B8C92 /* ResponseModel.swift */; };
 		CF0A8BC8278162D6004B8C92 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A8BC7278162D6004B8C92 /* HomeViewModel.swift */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E1DB7E2AB6227A003A6D36 /* SimpleToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +283,9 @@
 			dependencies = (
 			);
 			name = Recipal;
+			packageProductDependencies = (
+				C9E1DB7D2AB6227A003A6D36 /* SimpleToast */,
+			);
 			productName = Recipal;
 			productReference = CF5E09382AB2165200A214DD /* Recipal.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +358,9 @@
 				Base,
 			);
 			mainGroup = CF5E092F2AB2165200A214DD;
+			packageReferences = (
+				C9E1DB7C2AB6227A003A6D36 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+			);
 			productRefGroup = CF5E09392AB2165200A214DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -737,6 +745,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9E1DB7C2AB6227A003A6D36 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9E1DB7D2AB6227A003A6D36 /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9E1DB7C2AB6227A003A6D36 /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CF5E09462AB2165500A214DD /* Recipal.xcdatamodeld */ = {

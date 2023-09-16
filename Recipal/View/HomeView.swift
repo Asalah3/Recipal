@@ -6,14 +6,30 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 
-struct HomeView: View {
+struct HomeView: View, CellDelegate {
+    func renderView() {
+        
+    }
     
+    func showToast() {
+        isShowToast.toggle()
+        print("toast")
+    }
+    
+    private let toastOptions = SimpleToastOptions(
+        alignment: .bottom,
+        hideAfter: 2,
+        backdropColor: Color.black.opacity(0.2),
+        animation: .default,
+        modifierType: .slide
+    )
     @State var selectedCategory : Category = categoriesData[0]
     @State var isLoading = true
     @StateObject var homeVM : HomeViewModel = HomeViewModel(remoteDataSource: NetworkServices())
-    
+    @State var isShowToast: Bool = false
     func fetchCategoryData(category: String){
         switch category{
             case "Popular":
@@ -42,7 +58,6 @@ struct HomeView: View {
                     .padding(.horizontal, 10)
                 
                 HStack{
-                    
                     ForEach(categoriesData){ category in
                         
                         VStack{
@@ -73,7 +88,7 @@ struct HomeView: View {
                         NavigationLink {
                             DetailsView()
                         } label: {
-                            RecipeItem(recipe: recipe)
+                            RecipeItem(delegate: self,recipe: recipe)
                             
                         }
                     }// end of for
@@ -83,6 +98,16 @@ struct HomeView: View {
                 
                 
             }// outer VStack
+            .simpleToast(isPresented: $isShowToast, options: toastOptions){
+                HStack{
+                    Image(systemName: "checkmark.seal")
+                    Text("Recipe Added To Favourites Successfully")
+                }
+                .padding(20)
+                .background(Color.green.opacity(0.8))
+                .foregroundColor(Color.white)
+                .cornerRadius(14)
+            }
             .onAppear {
                 fetchCategoryData(category: "middle_eastern")
             }
