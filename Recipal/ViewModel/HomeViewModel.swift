@@ -22,11 +22,9 @@ class HomeViewModel :HomeViewModelProtocol {
     }
     
     func fetchHomeData(tag :String){
-        DispatchQueue.main.async {
-            self.remote?.fetchHomeCategoriesData(tag:tag) { res in
-                guard let result = res else {return}
-                self.fetchedHomeData = result
-            }
+        self.remote?.fetchHomeCategoriesData(tag:tag) { res in
+            guard let result = res else {return}
+            self.fetchedHomeData = result
         }
     }
     
