@@ -15,7 +15,6 @@ class NetworkServices : NetworkServicesProtocol{
      func fetchHomeCategoriesData(tag: String, compilitionHandler: @escaping (Categories?) -> Void) {
         let url = URL(string: "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=\(tag)")
     
-        
         guard let newUrl = url else {
             return
         }
@@ -29,17 +28,15 @@ class NetworkServices : NetworkServicesProtocol{
                 let result = try JSONDecoder().decode(Categories.self, from: data ?? Data())
                 compilitionHandler(result)
                 print("sucsses ")
-                print("result \(result.results?.first?.name)")
             } catch let error{
                 print(error)
                 compilitionHandler(nil)
                 print("fail ")
             }
-            
         }
         task.resume()
-        
     }
+    
     func fetchReceipeDetails(receipeId: Int, compilitionHandler: @escaping (Meal?) -> Void) {
        let url = URL(string: "https://tasty.p.rapidapi.com/recipes/get-more-info?id=\(receipeId)")
        guard let newUrl = url else {
@@ -54,11 +51,11 @@ class NetworkServices : NetworkServicesProtocol{
            do{
                let result = try JSONDecoder().decode(Meal.self, from: data ?? Data())
                compilitionHandler(result)
-               print("sucsses ")
+               print("sucsses in details")
            } catch let error{
                print(error)
                compilitionHandler(nil)
-               print("fail ")
+               print("fail in details")
            }
            
        }
@@ -78,11 +75,11 @@ class NetworkServices : NetworkServicesProtocol{
            do{
                let result = try JSONDecoder().decode(SimilaritiesRecipe.self, from: data ?? Data())
                compilitionHandler(result)
-               print("sucsses ")
+               print("sucsses in similar ")
            } catch let error{
                print(error)
                compilitionHandler(nil)
-               print("fail ")
+               print("fail in similar")
            }
        }
        task.resume()

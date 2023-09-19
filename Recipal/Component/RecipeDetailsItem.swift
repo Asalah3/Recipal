@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct RecipeDetailsItem: View {
+    var recipeName :  String?
+    var recipeimage : String?
+    var recipeType : String?
+    var recipeVideo : String?
+    var recipeservice : Int = 0
+    
     var body: some View {
         ZStack{
-            Image("details placeholder")
-                .resizable()
-                
+            //Loading recipe image
+            AsyncImage(url:  URL(string: recipeimage ?? "")){ phase in
+                switch phase{
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                case .failure:
+                    Image("details placeholder")
+                        .resizable()
+                @unknown default:
+                    fatalError("unexpected image")
+                }
+            }
+            
             WhiteGradient()
             VStack{
                 Spacer()
                 HStack{
-                    Button {
-                        
+                    NavigationLink {
+                        VedioPlayerView(vedioLink: recipeVideo ?? "")
                     } label: {
                         Image(systemName: "restart.circle.fill")
                             .resizable()
@@ -27,13 +46,15 @@ struct RecipeDetailsItem: View {
                             .background(.white)
                             .cornerRadius(30)
                     }
+                    
                     Spacer()
                 }//HStack
                 
                 HStack{
-                    Text("Grilled meat Skewers")
+                    Text(recipeName ?? "")
                         .lineLimit(2)
-                        .font(.system(size: 28))
+                        .font(.system(size: 26))
+                        .frame(width: 240)
                         
                     Spacer()
                     
@@ -53,19 +74,20 @@ struct RecipeDetailsItem: View {
                 
 
 
-                HStack{
+                HStack(alignment: .top){
                     Image("knife_fork")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text("Paki Food")
+                    Text(recipeType ?? "Paki Food")
                         .fontWeight(.light)
+                        .lineLimit(1)
                     
                     Spacer()
                     
                     Image("fork-and-knife-with-plate")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text("servings: 4")
+                    Text("servings: " + String(recipeservice))
                         .fontWeight(.light)
                     Spacer()
                 }//HStack

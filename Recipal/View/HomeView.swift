@@ -86,7 +86,7 @@ struct HomeView: View, CellDelegate {
                 ScrollView (.vertical, showsIndicators: false){
                     ForEach(homeVM.fetchedHomeData.results ?? [] ){recipe in
                         NavigationLink {
-                            DetailsView()
+                            DetailsView(recipeID: recipe.id ?? 0)
                         } label: {
                             RecipeItem(delegate: self,recipe: recipe)
                             

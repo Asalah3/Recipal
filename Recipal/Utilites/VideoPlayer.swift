@@ -7,13 +7,11 @@
 
 import Foundation
 import AVKit
+import _AVKit_SwiftUI
 
 var videoPlayer : AVPlayer?
 
-func playVideo(fileName : String, fileFormat: String) -> AVPlayer{
-    if Bundle.main.url(forResource: fileName, withExtension: fileFormat) != nil{
-        videoPlayer = AVPlayer(url: Bundle.main.url(forResource: fileName, withExtension: fileFormat)!)
-        videoPlayer?.play()
-    }
+func playVideo(videoLink : String) -> AVPlayer{
+    videoPlayer = AVPlayer(url: URL(string: videoLink)!)
     return videoPlayer!
 }

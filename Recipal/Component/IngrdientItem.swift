@@ -15,7 +15,6 @@ struct IngrdientItem: View {
                 .foregroundColor(Color("MainColor"))
                 .frame(width: 20, height: 20)
             Text(ingredient)
-                .lineLimit(3)
             
         }
     }
