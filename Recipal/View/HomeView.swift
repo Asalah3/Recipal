@@ -49,68 +49,73 @@ struct HomeView: View, CellDelegate {
 
     var body: some View {
         NavigationView{
-            VStack(alignment: .leading){
-                Text("Categories")
-                    .fontWeight(.heavy)
-                    .font(.system(size: 26))
-                    .foregroundColor(.black.opacity(0.7))
-                    .padding(.horizontal, 10)
-                
-                HStack{
-                    ForEach(categoriesData){ category in
-                        
-                        VStack{
-                            Image(category.image)
-                                .frame(width: UIScreen.main.bounds.width/6, height: 60)
-                                .padding(.horizontal,0.5)
-                                .padding(.vertical, 5)
-                                .background(
-                                    category == selectedCategory ? Color("MainColor") : .gray.opacity(0.2)
-                                )
-                                .cornerRadius(25)
-                            Text(category.title)
-                        }// end of VStack
-                        .onTapGesture {
-                            selectedCategory = category
-                            fetchCategoryData(category: category.title)
-                        }
-                        
-                    }// end of for
-                }//end of HStack of categories
+            ZStack{
+                VStack(alignment: .leading){
+                    Text("Categories")
+                        .fontWeight(.heavy)
+                        .font(.system(size: 26))
+                        .foregroundColor(.black.opacity(0.7))
+                        .padding(.horizontal, 10)
                     
-                .frame(height: 120)
-                .padding(.horizontal, 10)
-                
-                //Loading data and present it after fetching
-                ScrollView (.vertical, showsIndicators: false){
-                    ForEach(homeVM.fetchedHomeData.results ?? [] ){recipe in
-                        NavigationLink {
-                            DetailsView(recipeID: recipe.id ?? 0)
-                        } label: {
-                            RecipeItem(recipe: recipe, delegate: self)
+                    HStack{
+                        ForEach(categoriesData){ category in
                             
-                        }
-                    }// end of for
-                }//vertical ScrollView
-                
-                
-                
-                
-            }// outer VStack
-            .simpleToast(isPresented: $isShowToast, options: toastOptions){
-                HStack{
-                    Image(systemName: "checkmark.seal")
-                    Text("Recipe Added To Favourites Successfully")
+                            VStack{
+                                Image(category.image)
+                                    .frame(width: UIScreen.main.bounds.width/6, height: 60)
+                                    .padding(.horizontal,0.5)
+                                    .padding(.vertical, 5)
+                                    .background(
+                                        category == selectedCategory ? Color("MainColor") : .gray.opacity(0.2)
+                                    )
+                                    .cornerRadius(25)
+                                Text(category.title)
+                            }// end of VStack
+                            .onTapGesture {
+                                selectedCategory = category
+                                fetchCategoryData(category: category.title)
+                            }
+                            
+                        }// end of for
+                    }//end of HStack of categories
+                        
+                    .frame(height: 120)
+                    .padding(.horizontal, 10)
+                    
+                    //Loading data and present it after fetching
+                    ScrollView (.vertical, showsIndicators: false){
+                        ForEach(homeVM.fetchedHomeData.results ?? [] ){recipe in
+                            NavigationLink {
+                                DetailsView(recipeID: recipe.id ?? 0)
+                            } label: {
+                                RecipeItem(recipe: recipe, delegate: self)
+                                
+                            }
+                        }// end of for
+                    }//vertical ScrollView
+                    
+                    
+                    
+                    
+                }// outer VStack
+                .simpleToast(isPresented: $isShowToast, options: toastOptions){
+                    HStack{
+                        Image(systemName: "checkmark.seal")
+                        Text("Recipe Added To Favourites Successfully")
+                    }
+                    .padding(20)
+                    .background(Color.green)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(14)
                 }
-                .padding(20)
-                .background(Color.green)
-                .foregroundColor(Color.white)
-                .cornerRadius(14)
-            }
-            .onAppear {
-                fetchCategoryData(category: "middle_eastern")
-            }
-            
+                .onAppear {
+                    fetchCategoryData(category: selectedCategory.title)
+                }//Outer VStack
+                if homeVM.isLoading {
+                    Loader()
+                }
+                
+            }//ZStack
         }//NavigationView
     }
 }

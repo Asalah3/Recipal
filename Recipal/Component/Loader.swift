@@ -13,6 +13,7 @@ struct Loader: View {
             .ignoresSafeArea()
             .overlay(
                 ProgressView()
+                    .tint(Color("MainColor"))
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(3.0)
             )

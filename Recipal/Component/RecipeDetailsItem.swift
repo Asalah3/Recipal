@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecipeDetailsItem: View {
+    
     var recipeName :  String?
     var recipeimage : String?
     var recipeType : String?
@@ -15,13 +16,14 @@ struct RecipeDetailsItem: View {
     var recipeservice : Int = 0
     var recipeId : Int = 0
     var recipeDescription : String = ""
-    
     var delegate: CellDelegate?
     @State private var showAlert: Bool = false
     @State var imageURl : URL?
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
     @State var isFavourite: Bool = false
+    
+    
     var body: some View {
         ZStack{
             //Loading recipe image
@@ -104,7 +106,7 @@ struct RecipeDetailsItem: View {
                     Image("knife_fork")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text(recipeType ?? "Paki Food")
+                    Text(recipeType ?? "")
                         .fontWeight(.light)
                         .lineLimit(1)
                     

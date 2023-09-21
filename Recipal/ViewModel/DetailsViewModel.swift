@@ -21,6 +21,7 @@ class DetailsViewModel :DetailsViewModelProtocol {
     @Published var fetchedSimilaritiesRecipeDetailData:SimilaritiesRecipe?
     @Published var isReqestDetailsFailed = false
     @Published var isReqestSimilersFailed = false
+    @Published var isLoading = false
     private var cancellableDetails : AnyCancellable?
     private var cancellableSimilers : AnyCancellable?
 
@@ -30,6 +31,7 @@ class DetailsViewModel :DetailsViewModelProtocol {
     }
     
     func fetchReceipeDetailsData(receipeId: Int){
+        isLoading = true
         cancellableDetails = remote?.fetchReceipeDetails(receipeId:receipeId)?
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -39,9 +41,11 @@ class DetailsViewModel :DetailsViewModelProtocol {
                     print(error)
                 case .finished:
                     print("finished")
+                    self.isLoading = false
                 }
             } receiveValue: { details in
                 self.fetchedReceipeDetailData = details
+                self.isLoading = false
             }
     }
     
