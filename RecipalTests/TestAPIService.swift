@@ -40,7 +40,7 @@ final class TestAPIService: XCTestCase {
             XCTAssertNotEqual(categories.results?.count,0, "Failed ..")
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 15)
     }
 
     func testfetchSimilaritiesRecipe(){
@@ -61,7 +61,7 @@ final class TestAPIService: XCTestCase {
                 XCTAssertNotEqual(similers.results?.count ,0, "Failed ..")
                 expectation.fulfill()
             }
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 15)
     }
     
     func testfetchReceipeDetails(){
@@ -82,6 +82,6 @@ final class TestAPIService: XCTestCase {
                 XCTAssertNotEqual(details.id ,0, "Failed ..")
                 expectation.fulfill()
             }
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 15)
     }
 }
