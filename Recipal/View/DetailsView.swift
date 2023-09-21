@@ -65,6 +65,7 @@ struct DetailsView: View, CellDelegate {
                                 .font(.system(size: 24))
                             ForEach(detailsVM.fetchedReceipeDetailData?.instructions ?? []){ instruction in
                                 IngrdientItem(ingredient: instruction.displayText ?? "")
+                                    .padding(.leading, 15)
                             }
                             
                             
