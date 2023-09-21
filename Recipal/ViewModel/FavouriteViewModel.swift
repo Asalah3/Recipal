@@ -21,8 +21,8 @@ class FavouriteViewModel : ObservableObject{
         return coreDataManager.getAllFavouriteRecipes(context: context)
     }
     
-    func checkIfRecipeInserted(favouriteName : String ,context: NSManagedObjectContext) -> Bool{
-        return coreDataManager.checkIfRecipeInserted(favouriteName: favouriteName, context: context)
+    func checkIfRecipeInserted(favouriteId : String ,context: NSManagedObjectContext) -> Bool{
+        return coreDataManager.checkIfRecipeInserted(favouriteId: favouriteId, context: context)
     }
     func deleteFavouriteRecipeByName(favouriteName : String ,context: NSManagedObjectContext) {
         coreDataManager.deleteRecipeByName(context: context, favouriteName: favouriteName)

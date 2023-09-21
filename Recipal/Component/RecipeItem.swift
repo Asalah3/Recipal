@@ -9,8 +9,9 @@ import SwiftUI
 import SimpleToast
 
 struct RecipeItem: View {
-    var delegate: CellDelegate?
+    
     var recipe : Result?
+    var delegate: CellDelegate?
     @State private var showAlert: Bool = false
     @State var imageURl : URL?
     @Environment(\.managedObjectContext) private var viewContext
@@ -114,7 +115,8 @@ struct RecipeItem: View {
         .padding(.horizontal, 10)
         .onAppear {
             imageURl = URL(string: recipe?.thumbnail_url ?? "")
-            isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteName: recipe?.name ?? "0", context: viewContext)
+            isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteId: "\(recipe?.id ?? 0)" , context: viewContext)
+            
         }
     }
 }

@@ -11,13 +11,14 @@ import CoreData
 class CoreDataManager{
     func createFavouriteRecipe(context: NSManagedObjectContext, favouriteRecipe : Result){
         let recipe = FavouriteRecipe(context: context)
-        recipe.favouriteId = favouriteRecipe.id as? NSDecimalNumber
+        recipe.favouriteId = "\(favouriteRecipe.id ?? 0)"
         recipe.favouriteName = favouriteRecipe.name
         recipe.favouriteImage = favouriteRecipe.thumbnail_url
         recipe.favouriteServings = "\(favouriteRecipe.numServings ?? 0)"
         recipe.favouriteMealCheif = favouriteRecipe.description
         recipe.favouriteMealType = favouriteRecipe.slug
         saveFavouriteRecipe(context: context)
+        
     }
     
     func deleteRecipeByName(context: NSManagedObjectContext, favouriteName : String){
@@ -55,11 +56,11 @@ class CoreDataManager{
         }
     }
     
-    func checkIfRecipeInserted(favouriteName : String ,context: NSManagedObjectContext) -> Bool{
+    func checkIfRecipeInserted(favouriteId : String ,context: NSManagedObjectContext) -> Bool{
         var result = false
         let fetchedFavouriteList = getAllFavouriteRecipes(context: context)
         fetchedFavouriteList.forEach{item in
-            if item.favouriteName  == favouriteName{
+            if item.favouriteId  == favouriteId{
                 result = true
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 struct DetailsView: View, CellDelegate {
     func renderView() {
@@ -14,9 +15,14 @@ struct DetailsView: View, CellDelegate {
     
     func showToast() {
         isShowToast.toggle()
-        print("toast")
     }
-    
+    private let toastOptions = SimpleToastOptions(
+        alignment: .bottom,
+        hideAfter: 2,
+        backdropColor: Color.black.opacity(0.2),
+        animation: .default,
+        modifierType: .slide
+    )
     @State var recipeID : Int = 0
     @State var isShowToast: Bool = false
     @State var scrollToTop: Int? = nil
@@ -31,7 +37,7 @@ struct DetailsView: View, CellDelegate {
         ScrollView(.vertical){
             VStack(alignment: .leading){
                 
-                RecipeDetailsItem(recipeName: detailsVM.fetchedReceipeDetailData?.name, recipeimage: detailsVM.fetchedReceipeDetailData?.thumbnailURL, recipeType: detailsVM.fetchedReceipeDetailData?.slug, recipeVideo: detailsVM.fetchedReceipeDetailData?.videoURL, recipeservice: detailsVM.fetchedReceipeDetailData?.numServings ?? 0)
+                RecipeDetailsItem(recipeName: detailsVM.fetchedReceipeDetailData?.name, recipeimage: detailsVM.fetchedReceipeDetailData?.thumbnailURL, recipeType: detailsVM.fetchedReceipeDetailData?.slug, recipeVideo: detailsVM.fetchedReceipeDetailData?.videoURL, recipeservice: detailsVM.fetchedReceipeDetailData?.numServings ?? 0,recipeId: recipeID, recipeDescription: detailsVM.fetchedReceipeDetailData?.description ?? "",delegate: self)
                 
                 VStack(alignment: .leading){
                     Text("Ingredient")
@@ -67,7 +73,7 @@ struct DetailsView: View, CellDelegate {
                                 NavigationLink {
                                     DetailsView(recipeID: recipe.id ?? recipeID)
                                 } label: {
-                                    RecipeItem(delegate: self, recipe: Result(videoID: recipe.videoID, name: recipe.name, originalVideoURL: recipe.originalVideoURL, numServings: recipe.numServings, keywords: "", showID: 0, canonicalID: "", inspiredByURL: recipe.videoURL, seoTitle: "", isShoppable: false, thumbnail_url: recipe.thumbnailURL, videoURL: recipe.videoURL, updatedAt: 0, yields: "", isOneTop: false, id: recipe.id, approvedAt: 0 , totalTimeMinutes: 10, slug: recipe.slug, createdAt: 0, description: recipe.description, recipes: []))
+                                    RecipeItem(recipe: Result(videoID: recipe.videoID, name: recipe.name, originalVideoURL: recipe.originalVideoURL, numServings: recipe.numServings, keywords: "", showID: 0, canonicalID: "", inspiredByURL: recipe.videoURL, seoTitle: "", isShoppable: false, thumbnail_url: recipe.thumbnailURL, videoURL: recipe.videoURL, updatedAt: 0, yields: "", isOneTop: false, id: recipe.id, approvedAt: 0 , totalTimeMinutes: 10, slug: recipe.slug, createdAt: 0, description: recipe.description, recipes: []), delegate: self)
                                         .frame(width: 300)
                                 }
                             }
@@ -80,6 +86,16 @@ struct DetailsView: View, CellDelegate {
         }//ScrollView
         .ignoresSafeArea()
         .padding(.bottom, 1)
+        .simpleToast(isPresented: $isShowToast, options: toastOptions){
+            HStack{
+                Image(systemName: "checkmark.seal")
+                Text("Recipe Added To Favourites Successfully")
+            }
+            .padding(20)
+            .background(Color.green)
+            .foregroundColor(Color.white)
+            .cornerRadius(14)
+        }
         .onAppear {
             fetchRecipeDetails(recipeID: recipeID)
         }

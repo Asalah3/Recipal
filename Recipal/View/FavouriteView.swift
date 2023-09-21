@@ -41,11 +41,11 @@ struct FavouriteView: View, CellDelegate {
                     ScrollView (.vertical, showsIndicators: false){
                         ForEach(fetchedResults ?? []){item in
                             NavigationLink {
-                                DetailsView()
+                                DetailsView(recipeID: (item.favouriteId! as NSString).integerValue)
                             } label: {
                                 
-                                let result = Result(videoID: nil, name: item.favouriteName, originalVideoURL: nil, numServings: Int(item.favouriteServings ?? "0"), keywords: nil, showID: nil, canonicalID: nil, inspiredByURL: nil, seoTitle: nil, isShoppable: nil, thumbnail_url: item.favouriteImage, videoURL: nil, updatedAt: nil, yields: nil, isOneTop: nil, id: item.favouriteId as? Int, approvedAt: nil, totalTimeMinutes: nil, slug: item.favouriteMealType, createdAt: nil, description: item.favouriteMealCheif, recipes: nil)
-                                RecipeItem(delegate: self, recipe: result)
+                                let result = Result(videoID: nil, name: item.favouriteName, originalVideoURL: nil, numServings: Int(item.favouriteServings ?? "0"), keywords: nil, showID: nil, canonicalID: nil, inspiredByURL: nil, seoTitle: nil, isShoppable: nil, thumbnail_url: item.favouriteImage, videoURL: nil, updatedAt: nil, yields: nil, isOneTop: nil, id: (item.favouriteId! as NSString).integerValue, approvedAt: nil, totalTimeMinutes: nil, slug: item.favouriteMealType, createdAt: nil, description: item.favouriteMealCheif, recipes: nil)
+                                RecipeItem(recipe: result, delegate: self)
                                 
                             }
                         }// end of for

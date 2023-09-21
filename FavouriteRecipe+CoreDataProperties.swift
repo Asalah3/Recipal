@@ -2,7 +2,7 @@
 //  FavouriteRecipe+CoreDataProperties.swift
 //  Recipal
 //
-//  Created by Asalah Sayed on 16/09/2023.
+//  Created by Asalah Sayed on 21/09/2023.
 //
 //
 
@@ -16,7 +16,7 @@ extension FavouriteRecipe {
         return NSFetchRequest<FavouriteRecipe>(entityName: "FavouriteRecipe")
     }
 
-    @NSManaged public var favouriteId: NSDecimalNumber?
+    @NSManaged public var favouriteId: String?
     @NSManaged public var favouriteImage: String?
     @NSManaged public var favouriteMealCheif: String?
     @NSManaged public var favouriteMealType: String?

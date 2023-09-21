@@ -13,7 +13,15 @@ struct RecipeDetailsItem: View {
     var recipeType : String?
     var recipeVideo : String?
     var recipeservice : Int = 0
+    var recipeId : Int = 0
+    var recipeDescription : String = ""
     
+    var delegate: CellDelegate?
+    @State private var showAlert: Bool = false
+    @State var imageURl : URL?
+    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var favouriteViewModel : FavouriteViewModel
+    @State var isFavourite: Bool = false
     var body: some View {
         ZStack{
             //Loading recipe image
@@ -59,15 +67,33 @@ struct RecipeDetailsItem: View {
                     Spacer()
                     
                     Button {
-                        
+                        if isFavourite == true {
+                           showAlert.toggle()
+                        }else{
+                            let recipe = Result(videoID: nil, name: recipeName, originalVideoURL: nil, numServings: recipeservice, keywords: nil, showID: nil, canonicalID: nil, inspiredByURL: nil, seoTitle: nil, isShoppable: nil, thumbnail_url: recipeimage, videoURL: nil, updatedAt: nil, yields: nil, isOneTop: nil, id: recipeId, approvedAt: nil, totalTimeMinutes: nil, slug: recipeType, createdAt: nil, description: recipeDescription, recipes: nil)
+                            favouriteViewModel.createFavouriteRecipe(context: viewContext, favouriteRecipe: recipe)
+                            delegate?.showToast()
+                            isFavourite = true
+                        }
                     } label: {
                         VStack{
-                            Image(systemName: "heart")
+                            Image(systemName: (isFavourite ) ? "heart.fill" : "heart")
                                 .font(.title3)
                         }//VStack for fav button
-                        .frame(width: 60, height: 60)
+                        .frame(width: 40, height: 40)
                         .background(Color("MainColor"))
+                        .foregroundColor(.white)
+                        .fontWeight(.heavy)
                         .cornerRadius(10)
+                    }.alert("Warrning", isPresented: $showAlert) {
+                        Button("Delete", role: .destructive){
+                            favouriteViewModel.deleteFavouriteRecipeByName(favouriteName: recipeName ?? "", context: viewContext)
+                            self.delegate?.renderView()
+                            showAlert.toggle()
+                            isFavourite.toggle()
+                        }
+                    } message: {
+                        Text("Do you want to delete this Recipe")
                     }
                 }//HStack
                 .fontWeight(.heavy)
@@ -99,6 +125,10 @@ struct RecipeDetailsItem: View {
             .foregroundColor(.white)
         } //ZStack
         .frame(height: 320)
+        .onAppear{
+            isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteId: "\(recipeId)", context: viewContext)
+            print("is fav \(isFavourite)")
+        }
         
     }
 }

@@ -16,7 +16,6 @@ struct HomeView: View, CellDelegate {
     
     func showToast() {
         isShowToast.toggle()
-        print("toast")
     }
     
     private let toastOptions = SimpleToastOptions(
@@ -88,7 +87,7 @@ struct HomeView: View, CellDelegate {
                         NavigationLink {
                             DetailsView(recipeID: recipe.id ?? 0)
                         } label: {
-                            RecipeItem(delegate: self,recipe: recipe)
+                            RecipeItem(recipe: recipe, delegate: self)
                             
                         }
                     }// end of for
@@ -104,7 +103,7 @@ struct HomeView: View, CellDelegate {
                     Text("Recipe Added To Favourites Successfully")
                 }
                 .padding(20)
-                .background(Color.green.opacity(0.8))
+                .background(Color.green)
                 .foregroundColor(Color.white)
                 .cornerRadius(14)
             }

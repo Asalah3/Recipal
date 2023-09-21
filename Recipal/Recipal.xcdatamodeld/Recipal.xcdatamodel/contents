@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavouriteRecipe" representedClassName="FavouriteRecipe" syncable="YES">
-        <attribute name="favouriteId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="favouriteId" optional="YES" attributeType="String"/>
         <attribute name="favouriteImage" optional="YES" attributeType="String"/>
         <attribute name="favouriteMealCheif" optional="YES" attributeType="String"/>
         <attribute name="favouriteMealType" optional="YES" attributeType="String"/>
