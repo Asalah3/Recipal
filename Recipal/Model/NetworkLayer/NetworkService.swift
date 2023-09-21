@@ -6,84 +6,67 @@
 //
 
 import Foundation
+import Combine
+
 protocol NetworkServicesProtocol {
-    func fetchHomeCategoriesData(tag: String,compilitionHandler : @escaping (Categories?)-> Void)
-    func fetchReceipeDetails(receipeId: Int, compilitionHandler: @escaping (Meal?) -> Void)
-    func fetchSimilaritiesRecipe(receipeId: Int, compilitionHandler: @escaping (SimilaritiesRecipe?) -> Void)
+    func fetchHomeCategoriesData(tag: String) -> AnyPublisher<Categories, Error>?
+    func fetchReceipeDetails(receipeId: Int) -> AnyPublisher<Meal, Error>?
+    func fetchSimilaritiesRecipe(receipeId: Int) -> AnyPublisher<SimilaritiesRecipe, Error>?
 }
+
 class NetworkServices : NetworkServicesProtocol{
-     func fetchHomeCategoriesData(tag: String, compilitionHandler: @escaping (Categories?) -> Void) {
+     func fetchHomeCategoriesData(tag: String) -> AnyPublisher<Categories, Error>? {
         let url = URL(string: "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=\(tag)")
     
         guard let newUrl = url else {
-            return
+            return nil
         }
         var request = URLRequest(url: newUrl)
         request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
-                                       "X-RapidAPI-Key":"9cb882b063msh162ecccb7291936p15a97cjsn5ac2c6c27b75"]
+                                       "X-RapidAPI-Key":"03cffd8469mshc76a65413830c99p15fb9bjsn35761dd68b13"]
 
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: request){ data,response , error in
-            do{
-                let result = try JSONDecoder().decode(Categories.self, from: data ?? Data())
-                compilitionHandler(result)
-                print("sucsses ")
-            } catch let error{
-                print(error)
-                compilitionHandler(nil)
-                print("fail ")
-            }
-        }
-        task.resume()
+         let session = URLSession.shared
+        let task = session.dataTaskPublisher(for: request)
+             .map(\.data)
+             .decode(type: Categories.self, decoder: JSONDecoder())
+             .eraseToAnyPublisher()
+         
+        return task
     }
     
-    func fetchReceipeDetails(receipeId: Int, compilitionHandler: @escaping (Meal?) -> Void) {
+    func fetchReceipeDetails(receipeId: Int) -> AnyPublisher<Meal, Error>? {
        let url = URL(string: "https://tasty.p.rapidapi.com/recipes/get-more-info?id=\(receipeId)")
        guard let newUrl = url else {
-           return
+           return nil
        }
        var request = URLRequest(url: newUrl)
        request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
                                       "X-RapidAPI-Key":"edbcf0896dmsh5514fb8536977c7p1b9dd6jsn19b1cc27fd71"]
        
-       let session = URLSession(configuration: .default)
-       let task = session.dataTask(with: request){ data,response , error in
-           do{
-               let result = try JSONDecoder().decode(Meal.self, from: data ?? Data())
-               compilitionHandler(result)
-               print("sucsses in details")
-           } catch let error{
-               print(error)
-               compilitionHandler(nil)
-               print("fail in details")
-           }
-           
-       }
-       task.resume()
-       
-   }
-   func fetchSimilaritiesRecipe(receipeId: Int, compilitionHandler: @escaping (SimilaritiesRecipe?) -> Void) {
+        let session = URLSession.shared
+       let task = session.dataTaskPublisher(for: request)
+            .map(\.data)
+            .decode(type: Meal.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+        
+        return task
+    }
+    
+    
+   func fetchSimilaritiesRecipe(receipeId: Int) -> AnyPublisher<SimilaritiesRecipe, Error>? {
        let url = URL(string: "https://tasty.p.rapidapi.com/recipes/list-similarities?recipe_id=\(receipeId)")
        guard let newUrl = url else {
-           return
+           return nil
        }
        var request = URLRequest(url: newUrl)
        request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
                                       "X-RapidAPI-Key":"edbcf0896dmsh5514fb8536977c7p1b9dd6jsn19b1cc27fd71"]
-       let session = URLSession(configuration: .default)
-       let task = session.dataTask(with: request){ data,response , error in
-           do{
-               let result = try JSONDecoder().decode(SimilaritiesRecipe.self, from: data ?? Data())
-               compilitionHandler(result)
-               print("sucsses in similar ")
-           } catch let error{
-               print(error)
-               compilitionHandler(nil)
-               print("fail in similar")
-           }
-       }
-       task.resume()
-       
+       let session = URLSession.shared
+       let task = session.dataTaskPublisher(for: request)
+           .map(\.data)
+           .decode(type: SimilaritiesRecipe.self, decoder: JSONDecoder())
+           .eraseToAnyPublisher()
+       return task
    }
     
 }
