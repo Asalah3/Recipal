@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C9387D252AB5CF1F0031C51C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9387D242AB5CF1F0031C51C /* CoreDataManager.swift */; };
 		C9387D2A2AB5D1160031C51C /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */; };
+		C9B47EE42ABCD1BB00832473 /* OnboardingScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B47EE32ABCD1BB00832473 /* OnboardingScreens.swift */; };
 		C9E1DB7A2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */; };
 		C9E1DB7B2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */; };
 		C9E1DB7E2AB6227A003A6D36 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = C9E1DB7D2AB6227A003A6D36 /* SimpleToast */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		C9387D242AB5CF1F0031C51C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C9387D292AB5D1160031C51C /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		C9B47EE32ABCD1BB00832473 /* OnboardingScreens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScreens.swift; sourceTree = "<group>"; };
 		C9E1DB782AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9E1DB792AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF0A8BC1278161B3004B8C92 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		CF5E096E2AB2180B00A214DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9B47EE32ABCD1BB00832473 /* OnboardingScreens.swift */,
 				CF5E093D2AB2165200A214DD /* MainView.swift */,
 				CF5E096A2AB217DC00A214DD /* HomeView.swift */,
 				CF5E096C2AB217ED00A214DD /* FavouriteView.swift */,
@@ -437,6 +440,7 @@
 				CF5E096B2AB217DC00A214DD /* HomeView.swift in Sources */,
 				CF0A8BCA2AB585DB004B8C92 /* Loader.swift in Sources */,
 				CF5E096D2AB217ED00A214DD /* FavouriteView.swift in Sources */,
+				C9B47EE42ABCD1BB00832473 /* OnboardingScreens.swift in Sources */,
 				CF8459D42AB985FA00CE406B /* VedioPlayerView.swift in Sources */,
 				CF5E097B2AB23B4800A214DD /* CategoryData.swift in Sources */,
 				C9E1DB7B2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataProperties.swift in Sources */,

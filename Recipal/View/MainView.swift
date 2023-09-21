@@ -16,16 +16,21 @@ struct MainView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    @AppStorage("currentPage") var currentPage = 1
     var body: some View {
-        
-        TabView{
-            HomeView().tabItem {
-                Image(systemName: "house")
+        if currentPage > 3{
+            TabView{
+                HomeView().tabItem {
+                    Image(systemName: "house")
+                }
+                FavouriteView().tabItem {
+                    Image(systemName: "heart")
+                }
             }
-            FavouriteView().tabItem {
-                Image(systemName: "heart")
-            }
+        }else{
+            OnboardingScreens()
         }
+        
     }
 
     private func addItem() {
