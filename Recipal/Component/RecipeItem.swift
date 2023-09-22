@@ -12,6 +12,7 @@ struct RecipeItem: View {
     
     var recipe : Result?
     var delegate: CellDelegate?
+    @State var isAnimating : Bool = false
     @State private var showAlert: Bool = false
     @State var imageURl : URL?
     @Environment(\.managedObjectContext) private var viewContext
@@ -100,7 +101,6 @@ struct RecipeItem: View {
                             .fontWeight(.light)
                             .font(.system(size: 14))
                     }//HStack for serving
-                    
                 }//VStack for recipe info
                 .frame(width: 150)
                 .foregroundColor(.white)
@@ -109,11 +109,13 @@ struct RecipeItem: View {
             .padding(.horizontal, 20)
             
         }// ZStack
-        
         .frame(height: 180 ,alignment: .center)
         .cornerRadius(10)
+        .scaleEffect(isAnimating ? 1 : 0.7 )
+        .animation(.easeIn(duration: 1), value: isAnimating)
         .padding(.horizontal, 10)
         .onAppear {
+            isAnimating.toggle()
             imageURl = URL(string: recipe?.thumbnail_url ?? "")
             isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteId: "\(recipe?.id ?? 0)" , context: viewContext)
             

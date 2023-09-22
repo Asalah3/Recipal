@@ -10,6 +10,12 @@ import SimpleToast
 
 
 struct HomeView: View, CellDelegate {
+    
+    @State var selectedCategory : Category = categoriesData[0]
+    @State var isLoading = true
+    @StateObject var homeVM : HomeViewModel = HomeViewModel(remoteDataSource: NetworkServices())
+    @State var isShowToast: Bool = false
+    
     func renderView() {
         
     }
@@ -25,10 +31,7 @@ struct HomeView: View, CellDelegate {
         animation: .default,
         modifierType: .slide
     )
-    @State var selectedCategory : Category = categoriesData[0]
-    @State var isLoading = true
-    @StateObject var homeVM : HomeViewModel = HomeViewModel(remoteDataSource: NetworkServices())
-    @State var isShowToast: Bool = false
+    
     func fetchCategoryData(category: String){
         switch category{
             case "Popular":
@@ -89,14 +92,10 @@ struct HomeView: View, CellDelegate {
                                 DetailsView(recipeID: recipe.id ?? 0)
                             } label: {
                                 RecipeItem(recipe: recipe, delegate: self)
-                                
                             }
                         }// end of for
                     }//vertical ScrollView
-                    
-                    
-                    
-                    
+
                 }// outer VStack
                 .simpleToast(isPresented: $isShowToast, options: toastOptions){
                     HStack{

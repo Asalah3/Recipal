@@ -22,6 +22,7 @@ struct RecipeDetailsItem: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
     @State var isFavourite: Bool = false
+    @State var isAnimating : Bool = false
     
     
     var body: some View {
@@ -123,13 +124,20 @@ struct RecipeDetailsItem: View {
                 
                 
             }//VStack
+            .scaleEffect(isAnimating ? 1 : 0.2 )
+            .rotationEffect(isAnimating ? .degrees(0) : .degrees(90) )
+            .animation(.easeIn(duration: 1.5), value: isAnimating)
             .padding(.horizontal, 20)
             .foregroundColor(.white)
         } //ZStack
         .frame(height: 320)
+        .blur(radius: isAnimating ? 0 : 5)
+        //.rotationEffect(isAnimating ? .degrees(0) : .degrees(90) )
+        .animation(.easeIn(duration: 1), value: isAnimating)
         .onAppear{
             isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteId: "\(recipeId)", context: viewContext)
             print("is fav \(isFavourite)")
+            isAnimating.toggle()
         }
         
     }
