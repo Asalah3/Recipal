@@ -137,7 +137,7 @@ struct RecipeDetailsItem: View {
         .onAppear{
             isFavourite = favouriteViewModel.checkIfRecipeInserted(favouriteId: "\(recipeId)", context: viewContext)
             print("is fav \(isFavourite)")
-            isAnimating.toggle()
+            isAnimating = true
         }
         
     }
