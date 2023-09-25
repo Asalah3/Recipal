@@ -36,6 +36,10 @@
 		CF5E097D2AB254D000A214DD /* RecipeDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E097C2AB254D000A214DD /* RecipeDetailsItem.swift */; };
 		CF5E097F2AB2565100A214DD /* WhiteGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E097E2AB2565100A214DD /* WhiteGradient.swift */; };
 		CF5E09832AB2658C00A214DD /* IngrdientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E09822AB2658C00A214DD /* IngrdientItem.swift */; };
+		CF75428B2ABE341B000E1C47 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CF75428A2ABE341B000E1C47 /* Lottie */; };
+		CF75428E2ABE3451000E1C47 /* loadingView.json in Resources */ = {isa = PBXBuildFile; fileRef = CF75428D2ABE3451000E1C47 /* loadingView.json */; };
+		CF7542902ABE348E000E1C47 /* animation_lkqej87r.json in Resources */ = {isa = PBXBuildFile; fileRef = CF75428F2ABE348E000E1C47 /* animation_lkqej87r.json */; };
+		CF7542942ABE375C000E1C47 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7542932ABE375C000E1C47 /* LottieView.swift */; };
 		CF817D682ABCB5E10003E1C8 /* TestAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF817D672ABCB5E10003E1C8 /* TestAPIService.swift */; };
 		CF817D6A2ABCBAA20003E1C8 /* TestHomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF817D692ABCBAA20003E1C8 /* TestHomeVM.swift */; };
 		CF817D6C2ABCC3220003E1C8 /* TestDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF817D6B2ABCC3220003E1C8 /* TestDetailsVM.swift */; };
@@ -43,6 +47,7 @@
 		CF82C0AD2AB3B080002DEC2B /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF82C0AC2AB3B080002DEC2B /* VideoPlayer.swift */; };
 		CF8459D22AB933E300CE406B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8459D12AB933E300CE406B /* DetailsViewModel.swift */; };
 		CF8459D42AB985FA00CE406B /* VedioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8459D32AB985FA00CE406B /* VedioPlayerView.swift */; };
+		CF87EB332AC14AAC005B606A /* CheckNetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87EB322AC14AAC005B606A /* CheckNetworkConnectivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +99,9 @@
 		CF5E097C2AB254D000A214DD /* RecipeDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsItem.swift; sourceTree = "<group>"; };
 		CF5E097E2AB2565100A214DD /* WhiteGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteGradient.swift; sourceTree = "<group>"; };
 		CF5E09822AB2658C00A214DD /* IngrdientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngrdientItem.swift; sourceTree = "<group>"; };
+		CF75428D2ABE3451000E1C47 /* loadingView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingView.json; sourceTree = "<group>"; };
+		CF75428F2ABE348E000E1C47 /* animation_lkqej87r.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_lkqej87r.json; sourceTree = "<group>"; };
+		CF7542932ABE375C000E1C47 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		CF817D672ABCB5E10003E1C8 /* TestAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIService.swift; sourceTree = "<group>"; };
 		CF817D692ABCBAA20003E1C8 /* TestHomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVM.swift; sourceTree = "<group>"; };
 		CF817D6B2ABCC3220003E1C8 /* TestDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailsVM.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 		CF82C0AC2AB3B080002DEC2B /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		CF8459D12AB933E300CE406B /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		CF8459D32AB985FA00CE406B /* VedioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VedioPlayerView.swift; sourceTree = "<group>"; };
+		CF87EB322AC14AAC005B606A /* CheckNetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkConnectivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E1DB7E2AB6227A003A6D36 /* SimpleToast in Frameworks */,
+				CF75428B2ABE341B000E1C47 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +199,7 @@
 		CF5E093A2AB2165200A214DD /* Recipal */ = {
 			isa = PBXGroup;
 			children = (
+				CF75428C2ABE3438000E1C47 /* Lotties */,
 				CF0A8BC6278162B8004B8C92 /* ViewModel */,
 				CF82C0AB2AB3B066002DEC2B /* Utilites */,
 				CF5E09772AB23AE300A214DD /* Data */,
@@ -277,10 +288,21 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		CF75428C2ABE3438000E1C47 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				CF75428F2ABE348E000E1C47 /* animation_lkqej87r.json */,
+				CF75428D2ABE3451000E1C47 /* loadingView.json */,
+				CF7542932ABE375C000E1C47 /* LottieView.swift */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
 		CF82C0AB2AB3B066002DEC2B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
 				CF82C0AC2AB3B080002DEC2B /* VideoPlayer.swift */,
+				CF87EB322AC14AAC005B606A /* CheckNetworkConnectivity.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -303,6 +325,7 @@
 			name = Recipal;
 			packageProductDependencies = (
 				C9E1DB7D2AB6227A003A6D36 /* SimpleToast */,
+				CF75428A2ABE341B000E1C47 /* Lottie */,
 			);
 			productName = Recipal;
 			productReference = CF5E09382AB2165200A214DD /* Recipal.app */;
@@ -378,6 +401,7 @@
 			mainGroup = CF5E092F2AB2165200A214DD;
 			packageReferences = (
 				C9E1DB7C2AB6227A003A6D36 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+				CF7542892ABE341B000E1C47 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = CF5E09392AB2165200A214DD /* Products */;
 			projectDirPath = "";
@@ -396,6 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF5E09432AB2165500A214DD /* Preview Assets.xcassets in Resources */,
+				CF75428E2ABE3451000E1C47 /* loadingView.json in Resources */,
+				CF7542902ABE348E000E1C47 /* animation_lkqej87r.json in Resources */,
 				CF5E09402AB2165500A214DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +458,7 @@
 				C9E1DB7A2AB5EB46003A6D36 /* FavouriteRecipe+CoreDataClass.swift in Sources */,
 				CF5E097F2AB2565100A214DD /* WhiteGradient.swift in Sources */,
 				CF5E09452AB2165500A214DD /* Persistence.swift in Sources */,
+				CF7542942ABE375C000E1C47 /* LottieView.swift in Sources */,
 				CF5E093E2AB2165200A214DD /* MainView.swift in Sources */,
 				CF8459D22AB933E300CE406B /* DetailsViewModel.swift in Sources */,
 				CF0A8BC52781626D004B8C92 /* ResponseModel.swift in Sources */,
@@ -448,6 +475,7 @@
 				C9387D2A2AB5D1160031C51C /* FavouriteViewModel.swift in Sources */,
 				CF5E093C2AB2165200A214DD /* RecipalApp.swift in Sources */,
 				CF5E097D2AB254D000A214DD /* RecipeDetailsItem.swift in Sources */,
+				CF87EB332AC14AAC005B606A /* CheckNetworkConnectivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +807,14 @@
 				kind = branch;
 			};
 		};
+		CF7542892ABE341B000E1C47 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -786,6 +822,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9E1DB7C2AB6227A003A6D36 /* XCRemoteSwiftPackageReference "SimpleToast" */;
 			productName = SimpleToast;
+		};
+		CF75428A2ABE341B000E1C47 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF7542892ABE341B000E1C47 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

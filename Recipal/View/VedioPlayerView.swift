@@ -12,15 +12,21 @@ struct VedioPlayerView: View {
     var vedioLink : String = ""
     @State var vedioPlayer : AVPlayer?
     var body: some View {
-        VideoPlayer(player: vedioPlayer)
-            .frame(width: UIScreen.main.bounds.width,height: 300, alignment: .center)
-            .onDisappear {
-                vedioPlayer?.pause()
-            }
-            .onAppear {
-                vedioPlayer = playVideo(videoLink: vedioLink)
-                vedioPlayer?.play()
-            }
+        if playVideo(videoLink: vedioLink) != nil{
+            VideoPlayer(player: vedioPlayer)
+                .frame(width: UIScreen.main.bounds.width,height: 300, alignment: .center)
+                .onDisappear {
+                    vedioPlayer?.pause()
+                }
+                .onAppear {
+                    vedioPlayer = playVideo(videoLink: vedioLink)
+                    vedioPlayer?.play()
+                }
+        }else{
+            LottieView(filename: "animation_lkqej87r")
+                .scaledToFill()
+        }
+        
     }
         
 }

@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct Loader: View {
     var body: some View {
         Color.clear
             .ignoresSafeArea()
             .overlay(
-                ProgressView()
-                    .tint(Color("MainColor"))
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .scaleEffect(3.0)
+                LottieView(filename: "loadingView")
+                    .scaleEffect(0.7)
+//                ProgressView()
+//                    .tint(Color("MainColor"))
+//                    .progressViewStyle(CircularProgressViewStyle())
+//                    .scaleEffect(3.0)
             )
     }
 }

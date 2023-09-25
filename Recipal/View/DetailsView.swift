@@ -9,6 +9,13 @@ import SwiftUI
 import SimpleToast
 
 struct DetailsView: View, CellDelegate {
+    
+    @State var recipeID : Int = 0
+    @State var isShowToast: Bool = false
+    @State var scrollToTop: Int? = nil
+    @StateObject var detailsVM : DetailsViewModel = DetailsViewModel(remoteDataSource: NetworkServices())
+    @State private var displayNetworkConnectionAlert : Bool = false
+    
     func renderView() {
         
     }
@@ -23,10 +30,6 @@ struct DetailsView: View, CellDelegate {
         animation: .default,
         modifierType: .slide
     )
-    @State var recipeID : Int = 0
-    @State var isShowToast: Bool = false
-    @State var scrollToTop: Int? = nil
-    @StateObject var detailsVM : DetailsViewModel = DetailsViewModel(remoteDataSource: NetworkServices())
     
     func fetchRecipeDetails(recipeID: Int){
         detailsVM.fetchReceipeDetailsData(receipeId: recipeID)
@@ -105,8 +108,21 @@ struct DetailsView: View, CellDelegate {
             .foregroundColor(Color.white)
             .cornerRadius(14)
         }
+        .simpleToast(isPresented: $displayNetworkConnectionAlert, options: toastOptions){
+            HStack{
+                Image(systemName: "wifi.slash")
+                Text("Check your Network Connection")
+            }
+            .padding(20)
+            .frame(width: UIScreen.main.bounds.width - 10)
+            .background(Color("MainColor"))
+            .foregroundColor(Color.white)
+            .cornerRadius(14)
+            
+        }
         .onAppear {
             fetchRecipeDetails(recipeID: recipeID)
+            displayNetworkConnectionAlert = !CheckNetworkConnectivity.isConnectedToNetwork()
         }
         
     }

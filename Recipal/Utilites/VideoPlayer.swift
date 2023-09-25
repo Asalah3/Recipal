@@ -11,7 +11,10 @@ import _AVKit_SwiftUI
 
 var videoPlayer : AVPlayer?
 
-func playVideo(videoLink : String) -> AVPlayer{
-    videoPlayer = AVPlayer(url: (URL(string: videoLink)!))
-    return videoPlayer!
+func playVideo(videoLink : String) -> AVPlayer?{
+    if videoLink != "" {
+        videoPlayer = AVPlayer(url: (URL(string: videoLink)!))
+    }
+    
+    return videoPlayer
 }

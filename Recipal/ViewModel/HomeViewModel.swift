@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SystemConfiguration
 
 protocol HomeViewModelProtocol : ObservableObject{
     func fetchHomeData(tag :String)
@@ -44,6 +45,5 @@ class HomeViewModel :HomeViewModelProtocol {
             self.fetchedHomeData = categories
         }
     }
-    
 }
     

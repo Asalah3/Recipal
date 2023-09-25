@@ -18,6 +18,7 @@ struct RecipeItem: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var favouriteViewModel : FavouriteViewModel
     @State var isFavourite: Bool?
+    
     var body: some View {
         ZStack{
             

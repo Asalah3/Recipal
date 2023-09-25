@@ -15,6 +15,7 @@ struct HomeView: View, CellDelegate {
     @State var isLoading = true
     @StateObject var homeVM : HomeViewModel = HomeViewModel(remoteDataSource: NetworkServices())
     @State var isShowToast: Bool = false
+    @State private var displayNetworkConnectionAlert : Bool = false
     
     func renderView() {
         
@@ -88,14 +89,11 @@ struct HomeView: View, CellDelegate {
                     //Loading data and present it after fetching
                     ScrollView (.vertical, showsIndicators: false){
                         ForEach(homeVM.fetchedHomeData.results ?? [] ){recipe in
-                            NavigationLink {
-                                DetailsView(recipeID: recipe.id ?? 0)
-                            } label: {
+                            NavigationLink (destination: DetailsView(recipeID: recipe.id ?? 0)){
                                 RecipeItem(recipe: recipe, delegate: self)
                             }
                         }// end of for
                     }//vertical ScrollView
-
                 }// outer VStack
                 .simpleToast(isPresented: $isShowToast, options: toastOptions){
                     HStack{
@@ -107,8 +105,21 @@ struct HomeView: View, CellDelegate {
                     .foregroundColor(Color.white)
                     .cornerRadius(14)
                 }
+                .simpleToast(isPresented: $displayNetworkConnectionAlert, options: toastOptions){
+                    HStack{
+                        Image(systemName: "wifi.slash")
+                        Text("Check your Network Connection")
+                    }
+                    .padding(20)
+                    .frame(width: UIScreen.main.bounds.width - 10)
+                    .background(Color("MainColor"))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(14)
+                    
+                }
                 .onAppear {
                     fetchCategoryData(category: selectedCategory.title)
+                    displayNetworkConnectionAlert = !CheckNetworkConnectivity.isConnectedToNetwork()
                 }//Outer VStack
                 if homeVM.isLoading {
                     Loader()
